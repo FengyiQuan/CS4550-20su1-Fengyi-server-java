@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course List</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"/>
+    <link href="../styles.css" rel="stylesheet"/>
+    <link href="course-list.style.client.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container">
+
+    <nav class="navbar fixed-top navbar-dark bg-primary">
+        <i class="fa fa-bars wbdv-field wbdv-hamburger"></i>
+        <a class="navbar-brand" href="#">
+            <span class="wbdv-label wbdv-course-manager d-none d-sm-block">Course Manager</span>
+        </a>
+
+
+        <form class="form-inline no-wrap">
+            <input class="form-control mr-2 wbdv-field wbdv-new-course" type="text"
+                   placeholder="New Course Title">
+            <button class="btn btn-danger wbdv-button wbdv-add-course"
+                    type="submit">
+                <i class="fa fa-plus"></i>
+            </button>
+        </form>
+    </nav>
+
+    <table class="table table-striped">
+        <thead>
+        <tr class="table-primary">
+            <th class="wbdv-header wbdv-title">Title</th>
+            <th class="wbdv-header wbdv-owner d-none d-sm-table-cell">Owned by</th>
+            <th class="wbdv-header wbdv-last-modified d-none d-md-table-cell">Last modified by me
+            </th>
+            <th>
+                <i class="fa fa-th pr-2 wbdv-button wbdv-grid-layout"></i>
+                <i class="fa fa-list pr-2 wbdv-button wbdv-list-layout d-none"></i>
+                <i class="fa fa-sort-alpha-asc wbdv-header wbdv-sort"></i>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        <tr class="wbdv-row wbdv-course">
+            <td><i class="fa fa-file-text pr-2 wbdv-row wbdv-icon"></i>
+                <span class="wbdv-row wbdv-title">CS4550</span></td>
+            <td class="d-none d-sm-table-cell wbdv-row wbdv-owner">JGA</td>
+            <td class="d-none d-md-table-cell wbdv-row wbdv-modified-date">Today</td>
+            <td>
+                <button class="btn btn-danger btn-lg wbdv-row wbdv-button wbdv-delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+
+
+        </tbody>
+
+
+    </table>
+    <button class="wbdv-bottom-right-40px btn btn-danger btn-lg">
+        <i class="fa fa-plus"></i>
+    </button>
+
+
+</div>
+</body>
+</html>

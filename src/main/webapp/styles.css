@@ -1,0 +1,13 @@
+h2 {
+    background-color: blue;
+    color: white;
+}
+
+
+.btn {
+    border-radius: 4rem;
+}
+
+body {
+    padding-top: 65px;
+}
