@@ -29,3 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### test code ###
+src/main/webapp/test.html
