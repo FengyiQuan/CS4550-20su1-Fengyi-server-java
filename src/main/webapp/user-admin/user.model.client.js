@@ -16,44 +16,46 @@ function User(username, password, firstName, lastName, role) {
     this.setRole = setRole;
     this.getRole = getRole;
 
+    var self = this;
+
     function setUsername(username) {
-        this.username = username;
+        self.username = username;
     }
 
     function getUsername() {
-        return this.username;
+        return self.username;
     }
 
     function setPassword(pass) {
-        this.password = pass;
+        self.password = pass;
     }
 
     function getPassword() {
-        return this.password;
+        return self.password;
     }
 
     function setFirstName(fname) {
-        this.firstName = fname;
+        self.firstName = fname;
     }
 
     function getFirstName() {
-        return this.firstName;
+        return self.firstName;
     }
 
     function setLastName(lname) {
-        this.lastName = lname;
+        self.lastName = lname;
     }
 
     function getLastName() {
-        return this.lastName;
+        return self.lastName;
     }
 
     function setRole(role) {
-        this.role = role;
+        self.role = role;
     }
 
     function getRole() {
-        return this.role;
+        return self.role;
     }
 
 }

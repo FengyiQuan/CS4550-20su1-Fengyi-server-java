@@ -56,7 +56,7 @@ function AdminUserServiceClient() {
     }
 
     function deleteUser(userId) {
-        console.log('removing user: ' + userId)
+        console.log('removing user: ' + userId);
         return fetch(self.url + '/' + userId, {
                          method: 'DELETE'
                      }
