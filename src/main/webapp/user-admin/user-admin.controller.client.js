@@ -1,11 +1,8 @@
 (function () {
-    let users = [
-        {username: 'alice', password: 'alice', first: 'Alice', last: 'Wonderland', role: 'FACULTY'},
-        {username: 'bob', password: 'bob', first: 'Bob', last: 'Marley', role: 'FACULTY'},
-        {username: 'carl', password: 'carl', first: 'Carl', last: 'Garcia', role: 'STUDENT'}];
+    let users = [];
     let $usernameFld, $passwordFld;
     let $firstNameFld, $lastNameFld, $roleFld;
-    let $removeBtn, $editBtn, $createBtn;
+    let $removeBtn, $editBtn, $updateBtn, $createBtn, $searchBtn;
     let $userRowTemplate, $tbody;
     let userService = new AdminUserServiceClient();
     let selectedUser = {};
@@ -17,36 +14,48 @@
         $lastNameFld = $('#lastNameFld');
         $roleFld = $('#roleFld');
 
-        // $removeBtn=$('wbdv-remove')
+        // $removeBtn=$('wbdv-remove');
+        // $removeBtn.click(deleteUser);
         // $editBtn=$('wbdv-update');
+        // $editBtn.click(updateUser);
+        const template = $('.wbdv-template')[0];
+        $userRowTemplate = $(template).clone();
+
+        $updateBtn = $('.wbdv-update');
+        $updateBtn.click(updateUser);
         $createBtn = $('.wbdv-create');
         $createBtn.click(createUser);
+        $searchBtn = $('.wbdv-search');
+        $searchBtn.click(search);
         $tbody = $('tbody');
 
-        users = findAllUsers();
-        for (let i = 0; i < users.length; i++) {
-            const username = users[i].username;
-            const newUserRow = $('<tr><td>' + username + '</td></tr>');
-            $tbody.append(newUserRow)
-        }
+        findAllUsers();
+    }
+
+    function search() {
 
     }
 
     function createUser() {
         const username = $usernameFld.val();
+        const password = $passwordFld.val();
         const first = $firstNameFld.val();
         const last = $lastNameFld.val();
+        const role = $roleFld.val();
 
         const newUser = {
             username: username,
+            password: password,
             first: first,
-            last: last
+            last: last,
+            role: role
         };
+
         userService.createUser(newUser)
             .then(function (actualUser) {
                 users.push(actualUser);
                 renderUsers();
-            })
+            });
     }
 
     function findAllUsers() {
@@ -57,14 +66,22 @@
             })
     }
 
-    function findUserById() {
+    function deleteUser(event) {
+        console.log(event);
+        const target = event.currentTarget;
+        const $button = $(target);
+        const userId = $button.attr('id');
+        userService.deleteUser(userId)
+            .then(function () {
+                users = users.filter(function (user) {
+                    return user._id !== userId
+                });
+                renderUsers();
+            });
+
     }
 
-    function deleteUser() {
-
-    }
-
-    function selectUser(event) {
+    function findUserById(event) {
         const target = event.currentTarget;
         const $button = $(target);
         const userID = $button.attr('id');
@@ -79,37 +96,39 @@
         const updatedUser = {
             _id: selectedUser._id,
             username: $usernameFld.val(),
+            password: $passwordFld.val(),
             first: $firstNameFld.val(),
-            last: $lastNameFld.val()
+            last: $lastNameFld.val(),
+            role: $roleFld.val()
         };
         userService.updateUser(selectedUser._id, updatedUser)
-            .then(function(status) {
-                users = users.map(function(user) {
-                    if(user._id === selectedUser._id) {
+            .then(function (status) {
+                users = users.map(function (user) {
+                    if (user._id === selectedUser._id) {
                         return updatedUser;
                     } else {
                         return user;
                     }
                 });
+                renderUsers();
             });
+
     }
 
     function renderUser(user) {
         selectedUser = user;
         $usernameFld.val(user.username);
+        $passwordFld.val(user.password);
         $firstNameFld.val(user.first);
         $lastNameFld.val(user.last);
-
+        $roleFld.val(user.role);
     }
 
-    function renderUsers(users) {
-        const template = $('.wbdv-template')[0];
-        const $template = $(template);
-        const clone = $template.clone();
+    function renderUsers() {
         $tbody.empty();
         for (let i = 0; i < users.length; i++) {
             const user = users[i];
-            const copy = clone.clone();
+            const copy = $userRowTemplate.clone();
             copy.find('.wbdv-username').html(user.username);
             copy.find('.wbdv-first-name').html(user.first);
             copy.find('.wbdv-last-name').html(user.last);
@@ -119,7 +138,8 @@
                 .click(deleteUser);
             copy.find('.wbdv-edit')
                 .attr('id', user._id)
-                .click(selectUser);
+                .click(findUserById);
+            copy.removeClass('wbdv-hidden');
             $tbody.append(copy);
         }
     }
