@@ -19,22 +19,24 @@ public class Widget {
   private String cssClass;
   private String style;
   private String value;
-  private Integer topicId;
+  private String topicId;
 
   public Widget() {
   }
 
-  public Widget(Integer id, String name, String type) {
+  public Widget(Integer id, String name, String type, String topicId, Integer widgetOrder) {
     this.name = name;
     this.id = id;
     this.type = type;
+    this.topicId = topicId;
+    this.widgetOrder = widgetOrder;
   }
 
-  public Integer getTopicId() {
+  public String getTopicId() {
     return topicId;
   }
 
-  public void setTopicId(Integer topicId) {
+  public void setTopicId(String topicId) {
     this.topicId = topicId;
   }
 

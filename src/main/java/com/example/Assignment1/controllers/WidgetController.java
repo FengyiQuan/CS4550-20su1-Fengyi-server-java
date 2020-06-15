@@ -51,7 +51,7 @@ public class WidgetController {
 
   @GetMapping("/api/widgets/{widgetId}")
   public Widget findWidgetById(
-          @PathVariable("widgetId") Integer wid) {
+          @PathVariable("widgetId") String wid) {
     return widgetService.findWidgetById(wid);
   }
 
@@ -63,7 +63,7 @@ public class WidgetController {
 
   @GetMapping("/api/topics/{topicId}/widgets")
   public List<Widget> findWidgetsForTopic(
-          @PathVariable("topicId") Integer tid) {
+          @PathVariable("topicId") String tid) {
     return widgetService.findWidgetsForTopic(tid);
   }
 }

@@ -13,14 +13,14 @@ public class WidgetService {
   private List<Widget> widgets = new ArrayList<>();
 
   {
-    widgets.add(new Widget(123, "Widget 1", "HEADING"));
-    widgets.add(new Widget(234, "Widget 2", "PARAGRAPH"));
-    widgets.add(new Widget(345, "Widget 3", "YOUTUBE"));
-    widgets.add(new Widget(432, "Widget 4", "IMAGE"));
-    widgets.add(new Widget(567, "Widget 5", "PARAGRAPH"));
+    widgets.add(new Widget(123, "Widget 1", "HEADING", "5ede03992130620017638c98", 3));
+    widgets.add(new Widget(234, "Widget 2", "PARAGRAPH", "5ede03992130620017638c98", 2));
+    widgets.add(new Widget(345, "Widget 3", "PARAGRAPH", "5ede03992130620017638c98", 4));
+    widgets.add(new Widget(432, "Widget 4", "HEADING", "5ede03992130620017638c98", 1));
+    widgets.add(new Widget(567, "Widget 5", "PARAGRAPH", "t2", 1));
   }
 
-  public List<Widget> findWidgetsForTopic(Integer tid) {
+  public List<Widget> findWidgetsForTopic(String tid) {
     List<Widget> result = new ArrayList<>();
 
     for (Widget w : widgets) {
@@ -32,9 +32,9 @@ public class WidgetService {
     return result;
   }
 
-  public Widget findWidgetById(Integer wid) {
+  public Widget findWidgetById(String wid) {
     for (Widget w : widgets) {
-      if (w.getId().equals(wid)) {
+      if (String.valueOf(w.getId()).equals(wid)) {
         return w;
       }
     }
@@ -55,9 +55,12 @@ public class WidgetService {
     return 0;
   }
 
+  private static int count = 0;
+
   public Widget createWidget(String tid, Widget newWidget) {
-    newWidget.setId(widgets.size() * 20);
-    newWidget.setTopicId(Integer.valueOf(tid));
+
+    newWidget.setId(count++ * 10);
+    newWidget.setTopicId(tid);
     this.widgets.add(newWidget);
     return newWidget;
   }
