@@ -39,7 +39,7 @@ public class WidgetController {
 
   @PostMapping("/api/topics/{tid}/widgets")
   public Widget createWidget(
-          @PathVariable("tid") String topicId,
+          @PathVariable("tid") int topicId,
           @RequestBody Widget newWidget) {
     return widgetService.createWidget(topicId, newWidget);
   }
@@ -51,7 +51,7 @@ public class WidgetController {
 
   @GetMapping("/api/widgets/{widgetId}")
   public Widget findWidgetById(
-          @PathVariable("widgetId") String wid) {
+          @PathVariable("widgetId") int wid) {
     return widgetService.findWidgetById(wid);
   }
 
@@ -63,7 +63,7 @@ public class WidgetController {
 
   @GetMapping("/api/topics/{topicId}/widgets")
   public List<Widget> findWidgetsForTopic(
-          @PathVariable("topicId") String tid) {
+          @PathVariable("topicId") int tid) {
     return widgetService.findWidgetsForTopic(tid);
   }
 }

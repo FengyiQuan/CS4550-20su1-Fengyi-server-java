@@ -2,12 +2,17 @@ package com.example.Assignment1.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "widgets")
 public class Widget {
 
-  private String name;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
+  private String name;
   private String type;
   private Integer widgetOrder;
   private String text;
@@ -19,25 +24,35 @@ public class Widget {
   private String cssClass;
   private String style;
   private String value;
-  private String topicId;
+
+  @ManyToOne
+  @JsonIgnore
+  private Topic topic;
 
   public Widget() {
   }
 
-  public Widget(Integer id, String name, String type, String topicId, Integer widgetOrder) {
+  public Widget(Integer id, String name, String type) {
+    this.id = id;
+    this.name = name;
+    this.type = type;
+  }
+
+
+  public Widget(Integer id, String name, String type, Topic topic, Integer widgetOrder) {
     this.name = name;
     this.id = id;
     this.type = type;
-    this.topicId = topicId;
+    this.topic = topic;
     this.widgetOrder = widgetOrder;
   }
 
-  public String getTopicId() {
-    return topicId;
+  public Topic getTopic() {
+    return topic;
   }
 
-  public void setTopicId(String topicId) {
-    this.topicId = topicId;
+  public void setTopic(Topic topic) {
+    this.topic = topic;
   }
 
   public String getName() {
